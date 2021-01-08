@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import RainImg from "./imgs2/010-rain.svg";
 import axios from "axios";
 import FormattedDate from "./FormattedDate.js";
+import WeatherIcon from "./WeatherIcon.js";
 
 export default function FirstRow(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -103,7 +104,7 @@ export default function FirstRow(props) {
             </ul>
           </div>
           <div className="col-7" id="pic">
-            <img src={RainImg} id="bigWeatherImage" alt="rainy" />
+            <WeatherIcon code={weatherData.icon} />
           </div>
         </div>
       </div>
