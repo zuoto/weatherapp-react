@@ -2,7 +2,6 @@ import React from "react";
 import "./styles.css";
 import FirstRow from "./firstrow";
 import NextDays from "./nextDays";
-import Form from "./form";
 import Footer from "./footer";
 
 export default function App() {
@@ -10,9 +9,8 @@ export default function App() {
     <div className="container">
       <div className="card">
         <div className="card-body">
-          <FirstRow />
+          <FirstRow defaultCity="Tokyo" />
           <NextDays />
-          <Form />
         </div>
       </div>
       <Footer />
