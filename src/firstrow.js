@@ -4,6 +4,7 @@ import axios from "axios";
 import FormattedDate from "./FormattedDate.js";
 import WeatherIcon from "./WeatherIcon.js";
 import WeatherTemperature from "./WeatherTemperature";
+import NextDays from "./nextDays";
 
 export default function FirstRow(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -43,7 +44,7 @@ export default function FirstRow(props) {
       <div>
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-9">
+            <div className="col-10">
               <input
                 Type="search"
                 className="form-control"
@@ -54,15 +55,9 @@ export default function FirstRow(props) {
               />
             </div>
 
-            <div className="col-1">
+            <div className="col-2">
               <button type="submit" className="btn btn-info">
                 Go!
-              </button>
-            </div>
-
-            <div className="col-2">
-              <button type="button" className="btn btn-info" id="current">
-                Current
               </button>
             </div>
           </div>
@@ -92,9 +87,12 @@ export default function FirstRow(props) {
             </ul>
           </div>
           <div className="col-7" id="pic">
-            <WeatherIcon code={weatherData.icon} />
+            <div className="bigIcon">
+              <WeatherIcon code={weatherData.icon} />
+            </div>
           </div>
         </div>
+        <NextDays city={weatherData.city} />
       </div>
     );
   } else {
