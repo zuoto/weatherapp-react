@@ -3,6 +3,7 @@ import RainImg from "./imgs2/010-rain.svg";
 import axios from "axios";
 import FormattedDate from "./FormattedDate.js";
 import WeatherIcon from "./WeatherIcon.js";
+import WeatherTemperature from "./WeatherTemperature";
 
 export default function FirstRow(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
@@ -78,20 +79,7 @@ export default function FirstRow(props) {
               </li>
 
               <li>
-                <h1>
-                  <b>
-                    <span id="temp">{weatherData.temp}</span>
-                  </b>
-                  <span className="units">
-                    <a href="#" id="celsius-link" className="active">
-                      °C
-                    </a>
-                    |
-                    <a href="#" id="farenheit-link">
-                      °F
-                    </a>
-                  </span>
-                </h1>
+                <WeatherTemperature celcius={weatherData.temp} />
               </li>
 
               <li id="weatherDescription" className="text-capitalize">

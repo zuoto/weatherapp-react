@@ -42,7 +42,7 @@ a:hover {
   padding-left: 20px;
 }
 
-canvas {
+#bigWeatherImage {
   width: 250px;
   margin-top: -25px;
   margin-right: 25px;
